@@ -1,0 +1,14 @@
+{
+  "name": "wolfscale-app",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "web": "yarn workspace @wolfscale/web dev",
+    "mobile": "yarn workspace @wolfscale/mobile start",
+    "api": "yarn workspace @wolfscale/api start:dev",
+    "build": "yarn workspaces run build"
+  }
+}
