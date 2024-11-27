@@ -1,0 +1,170 @@
+@use 'sass:color';
+@use 'sass:map';
+@use 'variables' as *;
+
+$breakpoints: (
+  'small': 576px,
+  'medium': 768px,
+  'large': 992px,
+  'xlarge': 1200px) !default;
+
+@mixin card {
+  background-color: $color-primary-blue;
+  border-radius: $border-radius-lg;
+  box-shadow: 0 1px 3px rgba($color-primary-black, 0.1
+  );
+padding: $spacing-6;
+margin: 0 auto;
+}
+
+// Input
+@mixin input-base {
+  width: 100%;
+  padding: $spacing-2 $spacing-3;
+  background-color: $color-primary-black;
+  border: 2px solid $color-primary-blue;
+  border-radius: $border-radius;
+  color: $color-primary-grey;
+  transition: $transition-base;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary-red;
+    box-shadow: 0 0 0 2px rgba($color-primary-red, 0.2);
+  }
+
+  &:disabled {
+    background-color: darken($color-primary-black, 5%);
+    cursor: not-allowed;
+  }
+
+  &::placeholder {
+    color: $color-primary-blue;
+  }
+
+  &[type=number] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+    margin: 0;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  @else {
+    @error 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+@mixin container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $spacing-4;
+  padding-right: $spacing-4;
+
+  @include respond-to('medium') {
+    max-width: 720px;
+  }
+
+  @include respond-to('large') {
+    max-width: 960px;
+  }
+
+  @include respond-to('xlarge') {
+    max-width: 1140px;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-2 $spacing-4;
+  border-radius: $border-radius;
+  font-weight: 500;
+  transition: $transition-base;
+  cursor: pointer;
+  border: none;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba($color-primary-red, 0.2);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background-color: $color-primary-red;
+  color: $color-primary-grey;
+
+  &:hover {
+    background-color: color.adjust($color-primary-red, $lightness: -10%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px color.change($color-primary-red, $alpha: 0.2);
+  }
+
+  &:active {
+    background-color: color.adjust($color-primary-red, $lightness: -15%);
+  }
+
+  &:disabled {
+    background-color: color.adjust($color-primary-red, $lightness: 20%);
+    color: $color-primary-grey;
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background-color: $color-primary-blue;
+  color: $color-primary-grey;
+
+  &:hover {
+    background-color: color.adjust($color-primary-blue, $lightness: 10%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($color-primary-blue, 0.2);
+  }
+
+  &:active {
+    background-color: color.adjust($color-primary-blue, $lightness: 5%);
+  }
+
+  &:disabled {
+    background-color: color.adjust($color-primary-black, $lightness: 10%);
+    color: $color-primary-grey;
+  }
+}

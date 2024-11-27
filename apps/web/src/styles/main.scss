@@ -1,0 +1,30 @@
+// src/styles/main.scss
+
+// Config
+@use 'config' as *;
+
+// Abstracts
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+@use 'abstracts/functions' as *;
+
+// Base
+@use 'base/reset';
+@use 'base/typography';
+
+// Components
+@use 'components/curveWizard';
+@use 'components/stepOneWizard';
+@use 'components/stepTwoWizard';
+@use 'components/stepThreeWizard';
+@use 'components/stepFourWizard';
+
+// Layouts
+@use 'layouts/grid';
+@use 'layouts/containers';
+
+// Themes
+@use 'themes/default';
+
+// Vendors
+@use 'vendors/tailwind';

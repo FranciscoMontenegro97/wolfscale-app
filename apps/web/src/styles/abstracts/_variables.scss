@@ -1,0 +1,53 @@
+// src/styles/_variables.scss
+@use 'sass:color';
+
+// Colors
+$color-primary-grey: #DDDDDD;
+$color-primary-black: #222831;
+$color-primary-blue: #30475E;
+$color-primary-red: #F05454;
+
+// Derivados para UI
+$color-background: $color-primary-black;
+$color-text: $color-primary-grey;
+$color-border: $color-primary-blue;
+$color-accent: $color-primary-red;
+$color-card: color.adjust($color-primary-black, $lightness: 5%);
+$color-text-muted: color.adjust($color-primary-grey, $lightness: -20%);
+
+
+// Estados
+$color-success: color.adjust($color-primary-red, $hue: 120);
+$color-warning: color.adjust($color-primary-red, $hue: 30);
+$color-error: $color-primary-red;
+
+// Typography
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
+
+$font-family-base: 'Titillium Web', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+
+// Spacing
+$spacing-unit: 0.25rem;
+$spacing-1: $spacing-unit;
+$spacing-2: $spacing-unit * 2;
+$spacing-3: $spacing-unit * 3;
+$spacing-4: $spacing-unit * 4;
+$spacing-6: $spacing-unit * 6;
+$spacing-8: $spacing-unit * 8;
+$spacing-12: $spacing-unit * 12;
+
+// Borders
+$border-radius-sm: 0.125rem;
+$border-radius: 0.25rem;
+$border-radius-md: 0.375rem;
+$border-radius-lg: 0.5rem;
+
+// Transitions
+$transition-base: all 0.2s ease-in-out;
+
+// Z-index
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
