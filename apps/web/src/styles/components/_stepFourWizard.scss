@@ -1,0 +1,175 @@
+// src/styles/components/_stepFour.scss
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use 'sass:color';
+
+.step-four {
+  &__header {
+    margin-bottom: $spacing-6;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-primary-grey;
+  }
+
+  &__description {
+    color: rgba($color-primary-grey, 0.8);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  &__results {
+    width: 100%;
+    margin-bottom: $spacing-6;
+
+    &-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: $color-primary-grey;
+      margin-bottom: $spacing-4;
+    }
+
+    &-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background-color: rgba($color-primary-black, 0.3);
+      border-radius: $border-radius;
+      overflow: hidden;
+
+      th,
+      td {
+        padding: $spacing-3 $spacing-4;
+        text-align: left;
+        border-bottom: 1px solid rgba($color-primary-blue, 0.2);
+      }
+
+      th {
+        background-color: rgba($color-primary-blue, 0.3);
+        color: $color-primary-grey;
+        font-weight: 600;
+      }
+
+      td {
+        color: $color-primary-grey;
+      }
+    }
+  }
+
+  &__percentage {
+    width: 30%;
+    margin-top: $spacing-6;
+
+    &-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: $color-primary-grey;
+      margin-bottom: $spacing-4;
+    }
+
+    &-input-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-4;
+      // align-items: flex-end;
+      // margin-bottom: $spacing-4;
+    }
+
+    &-field {
+      flex: 1;
+    }
+
+    &-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: $color-primary-grey;
+      margin-bottom: $spacing-2;
+    }
+
+    &-input-wrapper {
+      position: relative;
+    }
+
+    &-input {
+      padding: $spacing-3 $spacing-4;
+      background-color: $color-primary-black;
+      border: 2px solid $color-primary-blue;
+      border-radius: $border-radius-lg;
+      color: $color-primary-grey;
+      transition: all 0.2s ease;
+
+      -webkit-appearance: none;
+      -moz-appearance: textfield;
+      appearance: none;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 0;
+      }
+
+      &::placeholder {
+        color: $color-primary-blue;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $color-primary-red;
+        box-shadow: 0 0 0 2px rgba($color-primary-red, 0.2);
+      }
+    }
+
+    &-button {
+      padding: $spacing-3 $spacing-4;
+      background-color: $color-primary-red;
+      color: $color-primary-grey;
+      border-radius: $border-radius;
+      transition: all 0.2s ease;
+      border: none;
+      display: flex;
+      align-self: flex-start;
+
+      &:hover {
+        background-color: color.adjust($color-primary-red, $lightness: 10%);
+      }
+    }
+
+    &-result {
+      margin-top: $spacing-4;
+      padding: $spacing-4;
+      background-color: rgba($color-primary-red, 0.1);
+      border-radius: $border-radius;
+      color: $color-primary-grey;
+    }
+  }
+
+  &__info {
+    background-color: rgba($color-primary-blue, 0.3);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: $spacing-6;
+
+    &-icon {
+      flex-shrink: 0;
+      color: rgba($color-primary-grey, 0.7);
+    }
+
+    &-text {
+      font-size: 0.875rem;
+      color: rgba($color-primary-grey, 0.7);
+    }
+  }
+}

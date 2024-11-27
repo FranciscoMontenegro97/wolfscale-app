@@ -1,0 +1,18 @@
+// src/styles/App.scss
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.app {
+  min-height: 100vh;
+  background-color: $color-gray-50;
+  padding: $spacing-12 $spacing-4;
+
+  @include respond-to('medium') {
+    padding: $spacing-12 $spacing-6;
+  }
+}
+
+.container {
+  @include container;
+  margin: 0 auto;
+}

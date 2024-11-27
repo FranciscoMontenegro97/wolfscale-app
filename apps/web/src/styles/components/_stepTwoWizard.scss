@@ -1,0 +1,123 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.step-two {
+  &__header {
+    margin-bottom: $spacing-6;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-primary-grey;
+  }
+
+  &__description {
+    color: rgba($color-primary-grey, 0.8);
+  }
+
+  &__form {
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // gap: $spacing-4;
+    // margin-bottom: $spacing-6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  &__input-group {
+    margin-bottom: $spacing-4;
+  }
+
+  &__label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $color-primary-grey;
+    margin-bottom: $spacing-2;
+  }
+
+  &__input-wrapper {
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    padding: $spacing-3 $spacing-4;
+    background-color: $color-primary-black;
+    border: 2px solid $color-primary-blue;
+    border-radius: $border-radius-lg;
+    color: $color-primary-grey;
+    transition: all 0.2s ease;
+
+    // Eliminar flechas del input number
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 0;
+    }
+
+    &::placeholder {
+      color: $color-primary-blue;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary-red;
+      box-shadow: 0 0 0 2px rgba($color-primary-red, 0.2);
+    }
+
+    &--error {
+      border-color: $color-primary-red;
+
+      &:focus {
+        box-shadow: 0 0 0 2px rgba($color-primary-red, 0.2);
+      }
+    }
+  }
+
+  &__error {
+    &-icon {
+      position: absolute;
+      right: $spacing-3;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $color-primary-red;
+    }
+
+    &-message {
+      margin-top: $spacing-2;
+      font-size: 0.875rem;
+      color: $color-primary-red;
+      display: flex;
+      align-items: center;
+      gap: $spacing-1;
+    }
+  }
+
+  &__info {
+    background-color: rgba($color-primary-blue, 0.3);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    &-icon {
+      flex-shrink: 0;
+      color: rgba($color-primary-grey, 0.7);
+    }
+
+    &-text {
+      font-size: 0.875rem;
+      color: rgba($color-primary-grey, 0.7);
+    }
+  }
+}

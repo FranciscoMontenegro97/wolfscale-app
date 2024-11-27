@@ -1,0 +1,176 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use 'sass:color';
+
+.step-three {
+  &__header {
+    margin-bottom: $spacing-6;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-primary-grey;
+  }
+
+  &__description {
+    color: rgba($color-primary-grey, 0.8);
+  }
+
+  &__form {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //gap: $spacing-6;
+  }
+
+  &__spans-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: $spacing-4;
+  }
+
+  &__add-button {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-2;
+    padding: $spacing-2 $spacing-3;
+    background-color: $color-primary-red;
+    color: $color-primary-grey;
+    border-radius: $border-radius;
+    transition: all 0.2s ease;
+    border: none;
+
+    &:hover {
+      background-color: color.adjust($color-primary-red, $lightness: 10%);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &__spans-container {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+    overflow: hidden;
+  }
+
+  &__span-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-4;
+    padding: $spacing-4;
+    background-color: rgba($color-primary-black, 0.3);
+    border-radius: $border-radius;
+    padding: $spacing-4;
+  }
+
+  &__input-group {
+    flex: 1;
+  }
+
+  &__label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $color-primary-grey;
+    margin-bottom: $spacing-2;
+  }
+
+  &__input-wrapper {
+    position: relative;
+  }
+
+  &__input {
+    //width: 100%;
+    padding: $spacing-3 $spacing-4;
+    background-color: $color-primary-black;
+    border: 2px solid $color-primary-blue;
+    border-radius: $border-radius-lg;
+    color: $color-primary-grey;
+    transition: all 0.2s ease;
+
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 0;
+    }
+
+    &::placeholder {
+      color: $color-primary-blue;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary-red;
+      box-shadow: 0 0 0 2px rgba($color-primary-red, 0.2);
+    }
+
+    &--error {
+      border-color: $color-primary-red;
+    }
+  }
+
+  &__remove-button {
+    background: $color-primary-grey;
+    display: flex;
+    align-self: flex-end;
+    padding: $spacing-2;
+    color: $color-primary-red;
+    border-radius: $border-radius;
+    transition: all 0.2s ease;
+    border: none;
+
+    &:hover {
+      background-color: rgba($color-primary-red, 0.1);
+    }
+  }
+
+  &__error {
+    &-icon {
+      position: absolute;
+      right: $spacing-3;
+      top: 50%;
+      //transform: translateY(-50%);
+      color: $color-primary-red;
+    }
+
+    &-message {
+      margin-top: $spacing-2;
+      font-size: 0.875rem;
+      color: $color-primary-red;
+    }
+  }
+
+  &__info {
+    background-color: rgba($color-primary-blue, 0.3);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: $spacing-6;
+
+    &-icon {
+      flex-shrink: 0;
+      color: rgba($color-primary-grey, 0.7);
+    }
+
+    &-text {
+      font-size: 0.875rem;
+      color: rgba($color-primary-grey, 0.7);
+    }
+  }
+}
