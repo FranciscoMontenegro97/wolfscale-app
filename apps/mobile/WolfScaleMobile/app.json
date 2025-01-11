@@ -1,0 +1,63 @@
+{
+  "expo": {
+    "name": "WolfScaleMobile",
+    "slug": "wolfscalemobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/WolfScale_icon.png",
+    "splash": {
+      "image": "./assets/WolfScale_icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#222831"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#222831"
+      },
+      "permissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.INTERNET"
+      ],
+      "package": "com.issco97.wolfscalemobile",
+      "versionCode": 1
+    },
+    "plugins": [
+      [
+        "expo-file-system",
+        {
+          "filePermission": true
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "La aplicación necesita acceso para guardar los PDFs generados.",
+          "savePhotosPermission": "La aplicación necesita acceso para guardar los PDFs generados."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "cbd8f61d-9585-439a-b9b5-0531d77d45d5"
+      }
+    }
+  },
+  "android": {
+    "adaptiveIcon": {
+      "foregroundImage": "./assets/adaptive-icon.png",
+      "backgroundColor": "#222831"
+    },
+    "package": "com.wolfscale.app"
+  }
+}
