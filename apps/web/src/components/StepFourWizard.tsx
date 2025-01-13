@@ -45,7 +45,8 @@ const StepFour: React.FC<StepFourProps> = ({ results, onCalculatePercentage, onR
         ...percentageCalc,
         result
       };
-      onResultChange(newResult);
+      setCalculatedResult(newResult); // Actualizamos el estado local
+      onResultChange(newResult); // Notificamos al componente padre
     }
   };
 
